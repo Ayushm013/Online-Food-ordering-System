@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="h-screen bg-fixed bg-[url('images/mainBG2.png')] bg-cover bg-center bg-no-repeat">
+    <!-- Dashboard navigation and session summary -->
+    <nav class="bg-purple-200 shadow-lg flex flex-col md:flex-row items-center justify-between pl-11 pr-7 py-4 mb-5 brand-shell">
+        <div class="flex items-center space-x-11">
+            <h1 class="text-5xl font-serif font-bold italic text-green-800">Ayush Maurya</h1>
+            <span id="emailDisplay" class="ml-4 text-gray-700 text-2xl font-bold italic"></span>
+            <span id="itemsInCart" class="ml-2 text-black font-bold text-green-800 px-2 py-1 rounded text-xl"></span>
+        </div>
+        <div class="mt-4 md:mt-0 flex space-x-4">
+            <button id="checkoutButton" type="button"
+                class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-4xl transition-colors duration-200 cursor-pointer app-button">
+                Checkout
+            </button>
+            <button id="signOutButton" type="button"
+                class="bg-gray-600 hover:bg-black text-white font-bold py-2 px-4 rounded-4xl transition-colors duration-200 cursor-pointer app-button">
+                Sign Out
+            </button>
+        </div>
+    </nav>
+
+    <!-- Dashboard content switches between the live menu and the current cart -->
+    <main class="container mx-auto px-4">
+        <div class="parent-container">
+            <div class="text-center mx-auto py-8 space-x-5">
+                <button id="menuButton" type="button"
+                    class="text-xl bg-purple-300 shadow-lg hover:bg-purple-400 text-green-900 font-bold py-2 px-10 rounded-4xl transition-colors duration-200 cursor-pointer app-button">
+                    Menu
+                </button>
+                <button id="cartButton" type="button"
+                    class="text-xl bg-purple-300 shadow-lg hover:bg-purple-400 text-green-900 font-bold py-2 px-11 rounded-4xl transition-colors duration-200 cursor-pointer app-button">
+                    Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu section is populated from the local Indian dishes catalog -->
+        <section id="menuDisplay" class="grid grid-cols-1 md:grid-cols-4 gap-16 p-16 bg-[url('images/menuBG.jpg')] bg-cover rounded-4xl shadow mb-8 panel-surface" aria-live="polite">
+            <!-- Food items will be rendered here -->
+        </section>
+
+        <!-- Cart section is rendered from the in-memory cart state -->
+        <section id="cartDisplay" class="bg-[url('images/menuBG.jpg')] bg-cover rounded-4xl shadow p-5 panel-surface" aria-live="polite">
+            <div id="cartItem">
+                <!-- Cart items will be rendered here -->
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="js/pages/dashboard.js"></script>
+</body>
+</html>

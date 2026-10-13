@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="h-screen bg-[url('images/signinBgImage.png')] bg-cover bg-center bg-no-repeat flex items-center justify-center min-h-screen">
+
+    <!-- Sign-in form validates stored credentials before opening the dashboard -->
+    <form id="signinForm" novalidate
+        class="bg-[url('images/choppingBoard.jpg')] bg-cover bg-center py-4 px-11 shadow-xl rounded-2xl w-full max-w-md auth-card">
+
+        <h2 class="text-orange-100 drop-shadow-md text-2xl font-bold italic font-serif my-5 text-center">Sign In</h2>
+
+        <label class="sr-only" for="emailId">Email address</label>
+        <input type="email" placeholder="Enter your email address" id="emailId" autocomplete="email"
+            class="bg-orange-100 mb-5 px-5 py-2 shadow-xl border-green-600 border-2 rounded-2xl w-full focus:ring-2 focus:outline-none focus:ring-green-700"><br>
+
+        <label class="sr-only" for="pwId">Password</label>
+        <input type="password" placeholder="Enter your password" id="pwId" autocomplete="current-password"
+            class="bg-orange-100 mb-5 px-5 py-2 shadow-xl border-green-600 border-2 rounded-2xl w-full focus:ring-2 focus:outline-none focus:ring-green-700"><br>
+
+        <!-- Form actions keep sign-in, reset, and registration navigation grouped together -->
+        <div class="flex items-center justify-between gap-3 flex-wrap">
+            <input type="submit" value="Sign In" id="signinBtn"
+                class="bg-green-500 shadow-md hover:bg-green-600 text-white border-2 border-green-600 rounded-2xl font-bold px-4 py-2 cursor-pointer app-button">
+
+            <input type="reset" value="Reset"
+                class="bg-green-500 shadow-md hover:bg-green-600 text-white border-2 border-green-600 rounded-2xl font-bold px-4 py-2 cursor-pointer app-button"><br>
+
+            <button id="registerBtn" class="px-2 font-serif font-bold py-4 text-orange-100 italic" type="button">Register</button>
+        </div>
+    </form>
+
+    <script type="module" src="js/pages/auth/sign-in.js"></script>
+</body>
+</html>
